@@ -4,6 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameRegisterActivity">
+    android:background="@drawable/splash_firebase"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".LoginActivity">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+
+                android:id="@+id/materialCardView"
+                android:layout_width="390dp"
+                android:layout_height="472dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="225dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.476"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.791">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="110dp"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/white">
+
+                    <EditText
+                        android:id="@+id/edNameGame"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/hint_name"
+                        android:inputType="textEmailAddress"
+                        android:textCursorDrawable="@color/textColor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="190dp"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/white">
+
+                    <EditText
+                        android:id="@+id/edDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/hint_date"
+                        android:inputType="textEmailAddress"
+                        android:textCursorDrawable="@color/textColor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="350dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="270dp"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/white">
+
+                    <EditText
+                        android:id="@+id/edDescriptionGame"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/hint_description"
+                        android:importantForAutofill="no"
+                        android:inputType="textPassword"
+                        android:textCursorDrawable="@color/textColor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/btRegister"
+                    android:layout_width="330dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="40dp"
+                    android:backgroundTint="@color/FF5252"
+                    android:text="@string/btRegister"
+                    android:textColor="@color/white" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="186dp"
+            android:layout_height="165dp"
+            android:layout_marginLeft="112dp"
+            android:layout_marginTop="145dp"
+            android:src="@drawable/game_iv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.183" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

@@ -11,4 +11,6 @@
     <string name="nome_game">Mortal Kombat X</string>
     <string name="data_lancamento">2018</string>
     <string name="textView_pesquisa_game">Search Game</string>
+    <string name="hint_date">Created at</string>
+    <string name="hint_description">Description</string>
 </resources>
