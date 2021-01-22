@@ -8,4 +8,7 @@
     <string name="hint_name">Name</string>
     <string name="hint_passwordR">Repeat Password</string>
     <string name="btRegister">Create Account</string>
+    <string name="nome_game">Mortal Kombat X</string>
+    <string name="data_lancamento">2018</string>
+    <string name="textView_pesquisa_game">Search Game</string>
 </resources>
