@@ -103,13 +103,13 @@
 
 
                 <Button
-                    android:id="@+id/btRegister"
+                    android:id="@+id/btRegisterGame"
                     android:layout_width="330dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center|bottom"
                     android:layout_marginBottom="40dp"
                     android:backgroundTint="@color/FF5252"
-                    android:text="@string/btRegister"
+                    android:text="@string/btRegistergame"
                     android:textColor="@color/white" />
 
 
@@ -118,6 +118,7 @@
         </RelativeLayout>
 
         <ImageView
+            android:id="@+id/iv_game"
             android:layout_width="186dp"
             android:layout_height="165dp"
             android:layout_marginLeft="112dp"
