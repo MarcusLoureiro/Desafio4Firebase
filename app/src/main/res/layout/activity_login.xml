@@ -26,6 +26,7 @@
             app:boxStrokeColor="@color/black">
 
             <EditText
+                android:id="@+id/edEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:autofillHints=""
@@ -45,6 +46,7 @@
             app:boxStrokeColor="@color/black">>
 
             <EditText
+                android:id="@+id/edPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"
