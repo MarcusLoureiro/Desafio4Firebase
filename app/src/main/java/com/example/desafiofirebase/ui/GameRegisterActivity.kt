@@ -1,4 +1,4 @@
-package com.example.desafiofirebase
+package com.example.desafiofirebase.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
+import com.example.desafiofirebase.R
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso

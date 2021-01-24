@@ -14,4 +14,5 @@
     <string name="hint_date">Created at</string>
     <string name="hint_description">Description</string>
     <string name="btRegistergame">SAVE GAME</string>
+    <string name="gameName">God Of War</string>
 </resources>

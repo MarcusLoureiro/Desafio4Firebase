@@ -7,12 +7,13 @@
     android:background="@drawable/splash_firebase"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".LoginActivity">
+    tools:context=".ui.LoginActivity">
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -23,14 +24,14 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <com.google.android.material.card.MaterialCardView
 
                 android:id="@+id/materialCardView"
-                android:layout_width="390dp"
-                android:layout_height="472dp"
-                android:layout_marginLeft="10dp"
+                android:layout_width="373dp"
+                android:layout_height="462dp"
                 android:layout_marginTop="225dp"
                 android:backgroundTint="@color/white"
                 app:cardCornerRadius="10dp"
@@ -117,19 +118,31 @@
 
         </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/iv_game"
-            android:layout_width="186dp"
-            android:layout_height="165dp"
-            android:layout_marginLeft="112dp"
-            android:layout_marginTop="145dp"
-            android:src="@drawable/game_iv"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.183" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view2"
+            android:layout_marginTop="190dp"
+            android:layout_marginStart="153dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:elevation="12dp"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1.9"
+            app:cardBackgroundColor="@color/FF5252"
+            app:cardCornerRadius="150dp">
+
+            <ImageView
+                android:id="@+id/iv_game"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/game_iv"/>
+
+        </androidx.cardview.widget.CardView>
+
 
     </RelativeLayout>
 
