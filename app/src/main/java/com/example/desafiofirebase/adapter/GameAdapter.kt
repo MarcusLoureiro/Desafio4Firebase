@@ -3,55 +3,38 @@ package com.example.desafiofirebase.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiofirebase.R
 import com.example.desafiofirebase.entities.Game
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_game_register.*
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.card_home.view.*
 
-class GameAdapter(private var listaGame: ArrayList<Game>, val listener: onGamelickListener): RecyclerView.Adapter<GameAdapter.GameViewHolder>() {
-    override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
-    ): GameViewHolder {
-        var itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_home, parent, false)
-        return GameViewHolder(itemView)
+class GameAdapter(
+    private val listGames: ArrayList<Game>,
+    private val clickListener: View.OnClickListener
+) : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
+    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.card_home, parent, false))
     }
 
-    override fun getItemCount() = listaGame.size
-
-    override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
-        var game = listaGame.get(position)
-
-        holder.tvNomeGame.text = game.name
-        //holder.imgGame.setImageResource(game.URL)
-
-
-
-    }
-    interface onGamelickListener{
-        fun gameClick(position: Int)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.itemView.tag = position
+        holder.itemView.setOnClickListener(clickListener)
+        holder.tvNome.text = listGames[position].name
+        holder.tvLancamento.text = listGames[position].data
+        Picasso.get().load(listGames[position].URL).into(holder.ivGame)
     }
 
+    override fun getItemCount() = listGames.size
 
-    inner class GameViewHolder(itemView: View):RecyclerView.ViewHolder(itemView), View.OnClickListener{
-        val tvNomeGame: TextView = itemView.findViewById(R.id.tv_Nome)
-        val imgGame: ImageView = itemView.findViewById(R.id.tv_lancamento)
-
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        override fun onClick(v: View?) {
-            val position = adapterPosition
-            if (RecyclerView.NO_POSITION != position){
-                listener.gameClick(position)
-            }
-        }
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val tvNome = view.tv_Nome!!
+        val tvLancamento = view.tv_lancamento!!
+        val ivGame = view.img_game!!
     }
-
-
 }
-
-

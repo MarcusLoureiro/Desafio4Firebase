@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -97,7 +98,7 @@
                         android:backgroundTint="@color/white"
                         android:hint="@string/hint_description"
                         android:importantForAutofill="no"
-                        android:inputType="textPassword"
+                        android:inputType="text"
                         android:textCursorDrawable="@color/textColor" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -119,29 +120,24 @@
         </RelativeLayout>
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/view2"
-            android:layout_marginTop="190dp"
-            android:layout_marginStart="153dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:elevation="12dp"
-            android:innerRadius="0dp"
-            android:shape="ring"
-            android:thicknessRatio="1.9"
-            app:cardBackgroundColor="@color/FF5252"
-            app:cardCornerRadius="150dp">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fb_camera"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginStart="130dp"
+            android:backgroundTint="#FF5555"
+            app:cardCornerRadius="200dp"
+            app:tint="@color/white">
 
             <ImageView
                 android:id="@+id/iv_game"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/game_iv"/>
+                android:src="@drawable/game_iv" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
 
     </RelativeLayout>
