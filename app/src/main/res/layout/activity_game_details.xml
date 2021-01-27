@@ -33,6 +33,7 @@
             android:src="@drawable/ic_back" />
 
         <TextView
+            android:id="@+id/tv_nameGameImgFundoDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="195dp"
@@ -59,7 +60,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/tvNameGame"
+        android:id="@+id/tvNameGameDetails"
         android:layout_width="182dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"

@@ -9,6 +9,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.desafiofirebase.R
 import com.example.desafiofirebase.adapter.GameAdapter
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecycler(){
-        rvGames.layoutManager = LinearLayoutManager(this)
+        rvGames.layoutManager = GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false)
         rvGames.setHasFixedSize(true)
     }
 

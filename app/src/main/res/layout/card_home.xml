@@ -8,8 +8,8 @@
     android:layout_gravity="center">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="201dp"
-        android:layout_height="173dp"
+        android:layout_width="179dp"
+        android:layout_height="147dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         app:cardCornerRadius="15dp"
@@ -24,7 +24,7 @@
         <ImageView
             android:id="@+id/img_game"
             android:layout_width="match_parent"
-            android:layout_height="131dp"
+            android:layout_height="106dp"
             android:scaleType="centerCrop"
             android:src="@drawable/splash_firebase"
             tools:ignore="ContentDescription" />
@@ -35,11 +35,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="110dp"
             android:layout_marginEnd="100dp"
             android:text="@string/nome_game"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="155dp"
+            android:layout_marginTop="125dp"
             android:layout_marginEnd="32dp"
             android:text="@string/data_lancamento"
             android:textColor="@color/gray"

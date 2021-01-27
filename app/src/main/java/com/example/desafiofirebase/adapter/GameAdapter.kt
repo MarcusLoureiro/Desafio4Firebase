@@ -1,5 +1,7 @@
 package com.example.desafiofirebase.adapter
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiofirebase.R
 import com.example.desafiofirebase.entities.Game
+import com.example.desafiofirebase.ui.GameDetailsActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_game_register.*
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -24,10 +27,19 @@ class GameAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.tag = position
-        holder.itemView.setOnClickListener(clickListener)
         holder.tvNome.text = listGames[position].name
         holder.tvLancamento.text = listGames[position].data
         Picasso.get().load(listGames[position].URL).into(holder.ivGame)
+        holder.ivGame.setOnClickListener {
+            val intent = Intent(holder.itemView.context, GameDetailsActivity::class.java)
+            intent.putExtra("name", listGames[position].name)
+            intent.putExtra("lancamento", listGames[position].data)
+            intent.putExtra("descricao", listGames[position].description)
+            intent.putExtra("url", listGames[position].URL)
+            intent.putExtra("key", listGames[position].name)
+            holder.itemView.context.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount() = listGames.size
