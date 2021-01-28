@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.app.AlertDialog
 import android.content.Intent
 import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
@@ -23,7 +24,7 @@ import java.util.*
 class GameRegisterActivity : AppCompatActivity() {
     lateinit var alertDialog: AlertDialog
     lateinit var storageReference: StorageReference
-    lateinit var URL: String
+    var URL: String = ""
     private var ImageSet = false
     private val service = Repository()
     private val CODE_IMG = 1000
@@ -41,17 +42,28 @@ class GameRegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_register)
         btRegisterGame.setOnClickListener {
+            var id = getUniqueId()
             if(ImageSet == true){
-                viewModelGame.sendGame(Game(edNameGame.text.toString(), edDate.text.toString(), edDescriptionGame.text.toString(), URL))
+                viewModelGame.sendGame(Game(id, edNameGame.text.toString(), edDate.text.toString(), edDescriptionGame.text.toString(), URL))
                 callHome()
-            }else{
-                Toast.makeText(this, "Insira uma Imagem Primeiro", Toast.LENGTH_SHORT).show()
+                Log.i("Teste", id)
+            }
+            val edit = intent.getSerializableExtra("edit") as? Boolean
+            val key = intent.getSerializableExtra("key") as? String
+            val UrlKey = intent.getSerializableExtra("url") as? String
+
+            Log.i("edit", edit.toString())
+            if(edit == true){
+                viewModelGame.UpdGames(Game(key.toString(), edNameGame.text.toString(), edDate.text.toString(), edDescriptionGame.text.toString(), UrlKey.toString()))
+                callHome()
+                Log.i("Teste",key.toString())
             }
         }
         iv_game.setOnClickListener {
             getRec()
         }
         config()
+        editGame()
     }
 
 
@@ -68,10 +80,35 @@ class GameRegisterActivity : AppCompatActivity() {
         startActivityForResult(Intent.createChooser(intent, "Captura Imagem"), CODE_IMG)
     }
 
+    fun getUniqueId() = service.db.collection(service.coll).document().id
+
+
     fun callHome(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+
+    fun editGame(){
+        val name = intent.getSerializableExtra("name") as? String
+        val data = intent.getSerializableExtra("lancamento") as? String
+        val description = intent.getSerializableExtra("descricao") as? String
+        val URL = intent.getSerializableExtra("url") as? String
+        val key = intent.getSerializableExtra("key") as? String
+        val edit = intent.getSerializableExtra("edit") as? Boolean
+        if(edit == true){
+            val game = Game(key!!,name!!,data!!,description!!,URL!!)
+            setGameInEd(game)
+        }
+    }
+
+    fun setGameInEd(game: Game){
+        edNameGame.setText(game.name)
+        edDate.setText(game.data)
+        edDescriptionGame.setText(game.description)
+        Picasso.get().load(game.URL).into(iv_game)
+
+    }
+
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

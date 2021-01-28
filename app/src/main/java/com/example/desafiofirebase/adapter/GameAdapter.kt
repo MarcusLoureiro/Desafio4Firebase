@@ -36,7 +36,7 @@ class GameAdapter(
             intent.putExtra("lancamento", listGames[position].data)
             intent.putExtra("descricao", listGames[position].description)
             intent.putExtra("url", listGames[position].URL)
-            intent.putExtra("key", listGames[position].name)
+            intent.putExtra("key", listGames[position].id)
             holder.itemView.context.startActivity(intent)
         }
 

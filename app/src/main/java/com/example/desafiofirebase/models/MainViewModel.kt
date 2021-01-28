@@ -21,7 +21,7 @@ class MainViewModel(val Service: Repository):ViewModel() {
 //            Game("Star Wars Jedi Fallen Order","2019", "Erga a nova Ordem Jedi", ),
 //        )
      fun sendGame(game: Game){
-         cr.document().set(game).addOnSuccessListener {
+         cr.document(game.id).set(game).addOnSuccessListener {
              resSend.value = true
          }.addOnCanceledListener {
              resSend.value = false
@@ -40,8 +40,8 @@ class MainViewModel(val Service: Repository):ViewModel() {
         }
     }
 
-    fun delGames(){
-        cr.document("").delete().addOnSuccessListener {
+    fun delGames(idGame: String){
+        cr.document(idGame).delete().addOnSuccessListener {
 
         }.addOnCanceledListener {
 
@@ -49,9 +49,8 @@ class MainViewModel(val Service: Repository):ViewModel() {
     }
 
     fun UpdGames(game: Game){
-        cr.document("").set(game).addOnSuccessListener {
+        cr.document(game.id).set(game).addOnSuccessListener {
             resSend.value = true
-
         }.addOnCanceledListener {
             resSend.value = false
 

@@ -6,8 +6,9 @@ import com.google.firebase.storage.FirebaseStorage
 import java.util.*
 
 class Repository{
+    val coll = "Games"
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
-    val cr:CollectionReference = db.collection("Games")
+    val cr:CollectionReference = db.collection(coll)
     val storageReference = FirebaseStorage.getInstance().getReference(cr.document().id)
 
 

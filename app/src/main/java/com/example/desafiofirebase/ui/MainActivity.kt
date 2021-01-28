@@ -47,9 +47,6 @@ class MainActivity : AppCompatActivity() {
             initAdapter(it)
         }
 
-
-
-
     }
 
     fun callRegisterGame(){
