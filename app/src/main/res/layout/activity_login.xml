@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:layout_marginTop="50dp"
-            app:hintTextColor="@color/white"
+            app:hintTextColor="@color/gray"
             app:boxStrokeColor="@color/black">
 
             <EditText
@@ -32,6 +32,7 @@
                 android:autofillHints=""
                 android:backgroundTint="@color/white"
                 android:hint="@string/hint_email"
+                android:textColor="@color/textColor"
                 android:textCursorDrawable="@color/textColor"
                 android:inputType="textEmailAddress" />
 
@@ -42,16 +43,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:layout_marginTop="120dp"
-            app:hintTextColor="@color/white"
-            app:boxStrokeColor="@color/black">>
+            app:hintTextColor="@color/gray"
+            app:boxStrokeColor="@color/textColor">
 
             <EditText
                 android:id="@+id/edPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/white"
                 android:hint="@string/hint_password"
                 android:importantForAutofill="no"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/textColor"
                 android:textCursorDrawable="@color/textColor"
                 android:inputType="textPassword" />
 

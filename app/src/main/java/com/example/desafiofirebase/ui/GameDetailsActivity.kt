@@ -19,6 +19,10 @@ class GameDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_details)
 
+        img_back.setOnClickListener {
+            finish()
+        }
+
         fb_editGame.setOnClickListener {
             sendGame()
         }

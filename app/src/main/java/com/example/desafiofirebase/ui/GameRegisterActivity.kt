@@ -46,7 +46,6 @@ class GameRegisterActivity : AppCompatActivity() {
             if(ImageSet == true){
                 viewModelGame.sendGame(Game(id, edNameGame.text.toString(), edDate.text.toString(), edDescriptionGame.text.toString(), URL))
                 callHome()
-                Log.i("Teste", id)
             }
             val edit = intent.getSerializableExtra("edit") as? Boolean
             val key = intent.getSerializableExtra("key") as? String
@@ -56,7 +55,6 @@ class GameRegisterActivity : AppCompatActivity() {
             if(edit == true){
                 viewModelGame.UpdGames(Game(key.toString(), edNameGame.text.toString(), edDate.text.toString(), edDescriptionGame.text.toString(), UrlKey.toString()))
                 callHome()
-                Log.i("Teste",key.toString())
             }
         }
         iv_game.setOnClickListener {
